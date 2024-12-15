@@ -1,0 +1,21 @@
+name: main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      - uses: actions/checkout@v4
+        uses: actions/setup-node@v4
+      - run: make setup
+      - run: make test
+      - run: make lint

@@ -1,7 +1,5 @@
 name: workflow
-
 on: push
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,4 +8,4 @@ jobs:
         uses: actions/setup-node@v4
       - run: make setup
       - run: make test
-      - run: make lint```
+      - run: make lint
